@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .slider-container {
+      margin: 20px;
+    }
+
+    button {
+      background-color: #ccc;
+      color: #666;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: not-allowed;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Volume Control</h1>
+  <div class="slider-container">
+    <label for="volumeSlider">Volume: <span id="volumeValue">50</span>%</label>
+    <input type="range" id="volumeSlider" min="0" max="100" value="50">
+  </div>
+  <button id="muteButton" disabled>Mute/Unmute</button>
+
+  <script>
+    const volumeSlider = document.getElementById('volumeSlider');
+    const volumeValue = document.getElementById('volumeValue');
+
+    // Update the displayed volume value when the slider changes
+    volumeSlider.addEventListener('input', () => {
+      volumeValue.textContent = volumeSlider.value;
+      console.log(`Volume set to: ${volumeSlider.value}%`);
+    });
+  </script>
+</body>
+</html>

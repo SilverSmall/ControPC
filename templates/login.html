@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Control Panel - Логін</title>
+    <link rel="stylesheet" href="/static/css/login_styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="fade-in">Welcome to the System Control Panel</h1>
+
+        <!-- Flashed messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashed-messages fade-in">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <form id="login-form" method="POST" action="/login">
+            <div class="input-group">
+                <label for="username">Ім'я користувача:</label>
+                <input type="text" id="username" name="username" placeholder="Введіть ім'я користувача" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" placeholder="Введіть пароль" required>
+            </div>
+            <button type="submit" class="btn">Увійти</button>
+        </form>
+        <p class="fade-in">Ще не маєте облікового запису? <a href="/register" class="btn-secondary">Реєстрація</a></p>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Зчитування значень з полів форми
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                // Надсилання запиту на сервер
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Login successful!');
+                    window.location.href = '/control-panel'; // Перенаправлення до основної сторінки
+                } else {
+                    alert('Login failed: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error during login:', error);
+                alert('An error occurred during login. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>

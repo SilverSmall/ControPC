@@ -1,0 +1,68 @@
+[
+    {
+        "timestamp": "2025-04-15 17:22:39",
+        "action": "open",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 17:23:01",
+        "action": "close",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 18:23:47",
+        "action": "open",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 18:24:01",
+        "action": "close",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 18:59:46",
+        "action": "open",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 19:00:08",
+        "action": "close",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 19:45:43",
+        "action": "open",
+        "program_name": "Steam.exe",
+        "status": "error"
+    },
+    {
+        "timestamp": "2025-04-15 19:46:31",
+        "action": "open",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 19:46:40",
+        "action": "close",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 19:49:17",
+        "action": "open",
+        "program_name": "steam.exe",
+        "status": "success"
+    },
+    {
+        "timestamp": "2025-04-15 19:49:24",
+        "action": "close",
+        "program_name": "steam.exe",
+        "status": "success"
+    }
+]

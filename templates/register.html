@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="/static/css/login_styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="fade-in">Реєстрація</h1>
+        <form id="register-form" class="form-slide-in" method="POST" action="/register">
+            <div class="input-group">
+                <label for="username">Ім'я користувача:</label>
+                <input type="text" id="username" name="username" placeholder="Введіть ім'я користувача" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" placeholder="Введіть пароль" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Підтвердіть пароль:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Підтвердіть пароль" required>
+            </div>
+            <button type="submit" class="btn">Зареєструватися</button>
+        </form>
+        <p class="fade-in">Вже маєте обліковий запис? <a href="/login" class="btn-secondary">Увійти</a></p>
+    </div>
+    <script src="/static/js/login.js"></script>
+</body>
+</html>
